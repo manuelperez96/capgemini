@@ -1,3 +1,3 @@
 # capgemini
 
-A new Flutter project.
+A project created for capgemini interview.
