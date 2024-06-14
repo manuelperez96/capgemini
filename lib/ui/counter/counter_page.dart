@@ -45,6 +45,8 @@ class _FormSectionState extends State<FormSection> {
 
   @override
   Widget build(BuildContext context) {
+    const spacer = SizedBox(height: 24);
+
     return Column(
       children: [
         Padding(
@@ -62,27 +64,12 @@ class _FormSectionState extends State<FormSection> {
           onPressed: _textfieldHasValue ? _setCounter : null,
           child: const Text('Set counter'),
         ),
-        const SizedBox(height: 24),
-        Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('click counter '),
-                Text('$_counter'),
-              ],
-            ),
-            const SizedBox(height: 24),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: _incrementCounterByOne,
-                  child: const Text('Add 1 to counter'),
-                ),
-              ],
-            ),
-          ],
+        spacer,
+        Text('click counter $_counter'),
+        spacer,
+        ElevatedButton(
+          onPressed: _incrementCounterByOne,
+          child: const Text('Add 1 to counter'),
         ),
       ],
     );
