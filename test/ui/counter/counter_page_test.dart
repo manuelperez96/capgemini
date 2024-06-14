@@ -65,6 +65,44 @@ void main() {
           },
         );
       });
+
+      group('Increment counter button', () {
+        testWidgets(
+          'increment counter value on pressed',
+          (widgetTester) async {
+            await widgetTester.pumpApp(const CounterPage());
+            expect(
+              find.text('click counter 3'),
+              findsOneWidget,
+            );
+
+            final finder = find.byKey(const Key("incrementButton"));
+            await widgetTester.tap(finder);
+            await widgetTester.pump();
+
+            expect(find.text('click counter 4'), findsOneWidget);
+          },
+        );
+      });
+
+      group('TextField', () {
+        testWidgets(
+          'is cleared when set counter button is pressed',
+          (widgetTester) async {
+            await widgetTester.pumpApp(const CounterPage());
+            final emptyTextFieldFinder = find.widgetWithText(TextField, '');
+            await widgetTester.enterText(emptyTextFieldFinder, '9');
+            final nineTextFieldFinder = find.widgetWithText(TextField, '9');
+            expect(nineTextFieldFinder, findsOneWidget);
+            expect(emptyTextFieldFinder, findsNothing);
+            await widgetTester.pump();
+            expect(find.text('9'), findsOneWidget);
+            await widgetTester.tap(find.byKey(const Key("setButton")));
+            await widgetTester.pump();
+            expect(emptyTextFieldFinder, findsOneWidget);
+          },
+        );
+      });
     },
   );
 }
