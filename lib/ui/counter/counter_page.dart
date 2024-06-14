@@ -61,6 +61,7 @@ class _FormSectionState extends State<FormSection> {
           ),
         ),
         ElevatedButton(
+          key: const Key("setButton"),
           onPressed: _textfieldHasValue ? _setCounter : null,
           child: const Text('Set counter'),
         ),
@@ -68,6 +69,7 @@ class _FormSectionState extends State<FormSection> {
         Text('click counter $_counter'),
         spacer,
         ElevatedButton(
+          key: const Key("incrementButton"),
           onPressed: _incrementCounterByOne,
           child: const Text('Add 1 to counter'),
         ),
