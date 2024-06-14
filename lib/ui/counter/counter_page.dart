@@ -6,7 +6,7 @@ class CounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return KeyboardCloser(
+    return const KeyboardCloser(
       child: Scaffold(
         body: SafeArea(
           child: FormSection(),
@@ -48,12 +48,12 @@ class _FormSectionState extends State<FormSection> {
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.all(24),
+          padding: const EdgeInsets.all(24),
           child: TextField(
             controller: _controller,
             keyboardType: TextInputType.number,
             onEditingComplete: _setCounter,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Initial counter',
             ),
           ),
@@ -68,7 +68,7 @@ class _FormSectionState extends State<FormSection> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('click counter '),
+                const Text('click counter '),
                 Text('$_counter'),
               ],
             ),

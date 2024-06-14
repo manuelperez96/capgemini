@@ -11,7 +11,7 @@ abstract class AppTheme {
   }
 
   static InputDecorationTheme get _inputDecorationTheme {
-    return InputDecorationTheme(
+    return const InputDecorationTheme(
       border: OutlineInputBorder(),
     );
   }

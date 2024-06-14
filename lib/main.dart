@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.standard,
-      home: CounterPage(),
+      home: const CounterPage(),
     );
   }
 }
